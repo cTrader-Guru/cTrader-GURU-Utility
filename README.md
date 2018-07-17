@@ -1,7 +1,7 @@
 # cTrader-GURU-Utility
 Una libreria open-source con tutte le utility più utilizzate e avanzate per [cTrader](https://buff.ly/2G7fnkN)
 
-Ecco un esempio di come utilizzarla, una volta clonata o scaricata la soluzione compilatela, oppure nella cartella "Release" nella radice troverete l'ultima versione stabile compilata personalmente quindi sicura.
+Ecco un esempio di come utilizzarla, una volta clonata o scaricata la soluzione compilatela, oppure nella cartella **DLL-COMPILED** nella radice troverete l'ultima versione stabile compilata personalmente quindi sicura.
 
 Nel vostro cBot create un riferimento a tale libreria **cTrader-GURU.dll** , poi scrivete quanto segue :
 
