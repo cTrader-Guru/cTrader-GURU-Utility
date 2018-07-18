@@ -22,7 +22,7 @@ Nel vostro cBot create un riferimento a tale libreria **cTrader-GURU.dll** , poi
 			      
 			    Print(hello.ciao());  
 			      
-			    Print(GURUs.ciao());  
+			    Print(GURUs.Ciao());  
 		      
 		    }  
 	      
