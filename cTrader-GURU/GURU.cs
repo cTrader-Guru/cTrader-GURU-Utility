@@ -47,7 +47,7 @@ namespace cTrader_GURU.Web
         /// <code>
         /// using cTrader_GURU.Web;
         /// 
-        /// string homepage = Browser.AddGetParamToUrl( 'https://ctrader.guru/?id=1#reload', 'page', '3' );
+        /// string homepage = Browser.AddGetParamToUrl( "https://ctrader.guru/?id=1#reload", "page", "3" );
         /// </code>
         /// </example>
         /// <param name="url">L'indirizzo a cui dobbiamo aggiungere il parametro</param>
@@ -131,7 +131,7 @@ namespace cTrader_GURU.Web
         /// <code>
         /// using cTrader_GURU.Web;
         /// 
-        /// string homepage = Browser.GET( 'https://ctrader.guru/' );
+        /// string homepage = Browser.GET( "https://ctrader.guru/" );
         /// </code>
         /// </example>
         /// <param name="url">L'indirizzo della pagina per la richiesta</param>
@@ -195,7 +195,7 @@ namespace cTrader_GURU.Web
         /// var data = new NameValueCollection();
         /// data["username"] = "gUrU";
         /// 
-        /// string response = Browser.POST( 'https://ctrader.guru/', data );
+        /// string response = Browser.POST( "https://ctrader.guru/", data );
         /// </code>
         /// </example>
         /// <param name="url">L'indirizzo della pagina per la richiesta</param>
