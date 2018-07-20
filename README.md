@@ -31,5 +31,6 @@ Nel vostro cBot create un riferimento a tale libreria **cTrader-GURU.dll** , poi
     }
 
 Compilatelo ed eseguitelo in una istanza, nel log del cBot leggerete **Hello World !** e **Hello Worlds !**
+trovate tutte le spiegazioni nel [wiki](https://github.com/cTraderGURU/cTrader-GURU-Utility/wiki)
 
 Licenza MIT, sapete cosa fare 😉
