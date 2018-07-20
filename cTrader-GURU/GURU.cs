@@ -6,6 +6,7 @@ using System.Web;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Collections.Specialized;
 
 namespace cTrader_GURU
 {
@@ -173,6 +174,68 @@ namespace cTrader_GURU.Web
                 responseInString = wb.DownloadString(myuri);
                 // --> responseInString = Encoding.UTF8.GetString(wb.DownloadData(url));
 
+            }
+
+            return responseInString;
+
+        }
+
+        /// <summary>
+        /// Richiesta HTTP --> POST con parametri
+        /// Tiene in considerazione i protocolli di sicurezza, il redirect e la cache.
+        /// </summary>
+        /// <returns>
+        /// Restituisce il source della pagina
+        /// </returns>
+        /// <example>
+        /// <code>
+        /// using cTrader_GURU.Web;
+        /// using System.Collections.Specialized;
+        /// 
+        /// var data = new NameValueCollection();
+        /// data["username"] = "gUrU";
+        /// 
+        /// string response = Browser.POST( 'https://ctrader.guru/', data );
+        /// </code>
+        /// </example>
+        /// <param name="url">L'indirizzo della pagina per la richiesta</param>
+        /// <param name="data">Parametri post</param>
+        /// <param name="nocache">Effettua la richiesta con parametro aggiuntivo mutevole</param>
+        /// <param name="useragent">User-Agent personalizzato</param>
+        public static string POST(string url, NameValueCollection data, bool nocache = false, string useragent = "cTrader GURU")
+        {
+
+            string responseInString = "";
+
+            // --> Richiesta originale senza cache ?
+
+            if (nocache)
+                url = AddGetParamToUrl(url, "t", DateTime.Now.ToString("yyyyMMddHHmmssffff"));
+
+            // --> Mi servono i permessi di sicurezza per il dominio, compreso i redirect
+
+            Uri myuri = new Uri(url);
+
+            string pattern = string.Format("{0}://{1}/.*", myuri.Scheme, myuri.Host);
+
+            // --> Autorizzo tutte le pagine di questo dominio
+
+            Regex urlRegEx = new Regex(@pattern);
+            WebPermission p = new WebPermission(NetworkAccess.Connect, urlRegEx);
+            p.Assert();
+
+            // --> Protocollo di sicurezza https://
+
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)192 | (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+
+            using (var wb = new WebClient())
+            {
+
+                wb.Headers.Add("User-Agent", useragent);
+
+                var response = wb.UploadValues(myuri, "POST", data);
+                responseInString = Encoding.UTF8.GetString(response);
+                
             }
 
             return responseInString;
