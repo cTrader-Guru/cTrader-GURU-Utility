@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Web;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Collections.Specialized;
+using System.Drawing.Text;
+using System.Runtime.InteropServices;
+using System.ComponentModel;
 
 namespace cTrader_GURU
 {
@@ -245,3 +244,95 @@ namespace cTrader_GURU.Web
     }
 
 }
+
+namespace cTrader_GURU.Font {
+
+    public enum FontFamilyType
+    {
+
+        [Description("Century Gothic")]
+        CenturyGothic = 1/*,
+
+        [Description("Da definire")]
+        DaDefinire = 15*/
+
+    };
+
+    public class FontFamily
+    {
+
+        [DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbfont, uint cbfont, IntPtr pdv, [In] ref uint pcFonts);
+
+        private System.Drawing.FontFamily _loadFont(byte[] fontArray, int dataLength)
+        {
+            
+            IntPtr ptrData = Marshal.AllocCoTaskMem(dataLength);
+
+            Marshal.Copy(fontArray, 0, ptrData, dataLength);
+
+            uint cFonts = 0;
+
+            AddFontMemResourceEx(ptrData, (uint)fontArray.Length, IntPtr.Zero, ref cFonts);
+
+            PrivateFontCollection pfc = new PrivateFontCollection();
+
+            pfc.AddMemoryFont(ptrData, dataLength);
+
+            Marshal.FreeCoTaskMem(ptrData);
+
+            return pfc.Families[0];
+
+        }
+
+        /// <summary>
+        /// Mette a disposizione un font senza alcuna installazione
+        /// </summary>
+        /// <returns>
+        /// Restituisce il Font richiesto tra quelli a disposizione in cTrader_GURU.Font.FontFamilyType
+        /// </returns>
+        /// <example>
+        /// <code>
+        ///     private void Form1_Load(object sender, EventArgs e){
+        ///
+        ///         cTrader_GURU.Font.FontFamily myFF = new cTrader_GURU.Font.FontFamily();
+        ///         System.Drawing.FontFamily ffCenturyGothic = myFF.GetFontFamily(cTrader_GURU.Font.FontFamilyType.CenturyGothic);
+        ///
+        ///         foreach (Control c in this.Controls ) {
+        ///
+        ///             if (c == null) continue;
+        ///
+        ///             string currentFontName = c.Font.FontFamily.Name.ToUpper();
+        ///
+        ///             if(currentFontName.Equals("MICROSOFT SANS SERIF") ) c.Font = new Font(ffCenturyGothic, c.Font.Size, c.Font.Style);
+        ///
+        ///         }
+        ///         
+        ///     }
+        /// </code>
+        /// </example>
+        /// <param name="myFFtype">Il tipo di carattere che si vuole utilizzare</param>
+        public System.Drawing.FontFamily GetFontFamily(FontFamilyType myFFtype ) {
+
+                    System.Drawing.FontFamily ff;
+
+                    switch (myFFtype) {
+
+                        case FontFamilyType.CenturyGothic:
+
+                            ff = _loadFont(Properties.Resources.CenturyGothic, Properties.Resources.CenturyGothic.Length);
+                            break;
+
+                        default:
+
+                            throw new Exception("cTrader_GURU.Font.FontFamily.GetFontFamily() : Unknown parameter");
+
+                    }
+
+                    return ff;
+
+        }
+
+    }
+
+}   
