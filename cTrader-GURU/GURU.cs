@@ -251,10 +251,19 @@ namespace cTrader_GURU.Font {
     {
 
         [Description("Century Gothic")]
-        CenturyGothic = 1/*,
+        CenturyGothic = 1,
 
-        [Description("Da definire")]
-        DaDefinire = 15*/
+        [Description("Cabin Regular")]
+        CabinRegular = 2,
+
+        [Description("Open Sans Light")]
+        OpenSansLight = 3,
+
+        [Description("Open Sans Regular")]
+        OpenSansRegular = 4,
+
+        [Description("Open Sans Bold")]
+        OpenSansBold = 5
 
     };
 
@@ -321,6 +330,26 @@ namespace cTrader_GURU.Font {
                         case FontFamilyType.CenturyGothic:
 
                             ff = _loadFont(Properties.Resources.CenturyGothic, Properties.Resources.CenturyGothic.Length);
+                            break;
+
+                        case FontFamilyType.CabinRegular:
+
+                            ff = _loadFont(Properties.Resources.Cabin_Regular, Properties.Resources.Cabin_Regular.Length);
+                            break;
+
+                        case FontFamilyType.OpenSansLight:
+
+                            ff = _loadFont(Properties.Resources.OpenSans_Light, Properties.Resources.OpenSans_Light.Length);
+                            break;
+
+                        case FontFamilyType.OpenSansRegular:
+
+                            ff = _loadFont(Properties.Resources.OpenSans_Regular, Properties.Resources.OpenSans_Regular.Length);
+                            break;
+
+                        case FontFamilyType.OpenSansBold:
+
+                            ff = _loadFont(Properties.Resources.OpenSans_Bold, Properties.Resources.OpenSans_Bold.Length);
                             break;
 
                         default:

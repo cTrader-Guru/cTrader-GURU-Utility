@@ -63,9 +63,49 @@ namespace cTrader_GURU.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Byte[].
         /// </summary>
+        internal static byte[] Cabin_Regular {
+            get {
+                object obj = ResourceManager.GetObject("Cabin_Regular", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Byte[].
+        /// </summary>
         internal static byte[] CenturyGothic {
             get {
                 object obj = ResourceManager.GetObject("CenturyGothic", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Byte[].
+        /// </summary>
+        internal static byte[] OpenSans_Bold {
+            get {
+                object obj = ResourceManager.GetObject("OpenSans_Bold", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Byte[].
+        /// </summary>
+        internal static byte[] OpenSans_Light {
+            get {
+                object obj = ResourceManager.GetObject("OpenSans_Light", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Byte[].
+        /// </summary>
+        internal static byte[] OpenSans_Regular {
+            get {
+                object obj = ResourceManager.GetObject("OpenSans_Regular", resourceCulture);
                 return ((byte[])(obj));
             }
         }
