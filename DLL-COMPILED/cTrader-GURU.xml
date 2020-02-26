@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>cTrader-GURU</name>
+    </assembly>
+    <members>
+        <member name="T:cTrader_GURU.GURU">
+            <summary>
+            Una classe di esempio per chi si avvicina per la prima volta a questo linguaggio
+            </summary>    
+        </member>
+        <member name="M:cTrader_GURU.GURU.Ciao">
+            <summary>
+            Un esempio di come si richiama una nuova classe
+            <para>Wiki : https://github.com/cTraderGURU/cTrader-GURU-Utility/wiki/GURU.Ciao() </para>
+            </summary>
+            <returns>
+            Una semplice stringa "Hello Worlds !"
+            </returns>
+        </member>
+        <member name="T:cTrader_GURU.GURUs">
+            <summary>
+            Una classe di esempio per chi si avvicina per la prima volta a questo linguaggio
+            </summary>   
+        </member>
+        <member name="M:cTrader_GURU.GURUs.Ciao">
+            <summary>
+            Un esempio di come si richiama una classe statica
+            <para>Wiki : https://github.com/cTraderGURU/cTrader-GURU-Utility/wiki/GURUs.Ciao() </para>
+            </summary>
+            <returns>
+            Una semplice stringa "Hello Worlds !"
+            </returns>
+        </member>
+        <member name="T:cTrader_GURU.Web.Browser">
+            <summary>
+            Classe con metodi per gestire le richieste GET - POST
+            </summary>
+        </member>
+        <member name="M:cTrader_GURU.Web.Browser.AddGetParamToUrl(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Aggiunge un parametro GET a un url, tiene in considerazione quasi ogni scenario.
+            <para>Wiki : https://github.com/cTraderGURU/cTrader-GURU-Utility/wiki/Browser.AddGetParamToUrl() </para>
+            </summary>
+            <returns>
+            Restituisce l'url aggiornato con il parametro aggiunto.
+            </returns>
+            <param name="url">L'indirizzo a cui dobbiamo aggiungere il parametro</param>
+            <param name="pname">Il nome del parametro</param>
+            <param name="pvalue">Il valore del parametro</param>
+            <param name="enc">Sottoporre ad encoding il valore del parametro</param>
+        </member>
+        <member name="M:cTrader_GURU.Web.Browser.ParseTag(System.String,System.String)">
+            <summary>
+            Esegue una ricerca in una stringa per trovare i tag html scelti
+            <para>Wiki : https://github.com/cTraderGURU/cTrader-GURU-Utility/wiki/Browser.ParseTag() </para>
+            </summary>
+            <returns>
+            Una collezione di risultati per il tag html cercato
+            </returns>
+            <param name="html">La stringa con il codice sorgente</param>
+            <param name="regexTag">Il pattern Regx per la ricerca</param>
+        </member>
+        <member name="M:cTrader_GURU.Web.Browser.GET(System.String,System.Boolean,System.String)">
+            <summary>
+            Richiesta HTTP --> GET, tiene in considerazione i protocolli di sicurezza, il redirect e la cache.
+            <para>Wiki : https://github.com/cTraderGURU/cTrader-GURU-Utility/wiki/Browser.GET() </para>
+            </summary>
+            <returns>
+            Restituisce il source della pagina
+            </returns>
+            <param name="url">L'indirizzo della pagina per la richiesta</param>
+            <param name="nocache">Effettua la richiesta con parametro aggiuntivo mutevole</param>
+            <param name="useragent">User-Agent personalizzato</param>
+        </member>
+        <member name="M:cTrader_GURU.Web.Browser.POST(System.String,System.Collections.Specialized.NameValueCollection,System.Boolean,System.String)">
+            <summary>
+            Richiesta HTTP --> POST con parametri, tiene in considerazione i protocolli di sicurezza, il redirect e la cache.
+            <para>Wiki : https://github.com/cTraderGURU/cTrader-GURU-Utility/wiki/Browser.POST() </para>
+            </summary>
+            <returns>
+            Restituisce il source della pagina
+            </returns>
+            <param name="url">L'indirizzo della pagina per la richiesta</param>
+            <param name="data">Parametri post</param>
+            <param name="nocache">Effettua la richiesta con parametro aggiuntivo mutevole</param>
+            <param name="useragent">User-Agent personalizzato</param>
+        </member>
+        <member name="T:cTrader_GURU.Update.JsonPostParam">
+            <summary>
+            Parametri necessari per richiedere le informazioni alle API fornite da ctrader.guru
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Update.JsonPostParam.AccountBroker">
+            <summary>
+            Il nome del Broker con cui il client opera, utilizzato a fini statistici e di profilazione
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Update.JsonPostParam.AccountNumber">
+            <summary>
+            Il numero di conto con cui il client opera, utilizzato a fini statistici e di profilazione
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Update.JsonPostParam.MyVersion">
+            <summary>
+            La versione attualmente in uso nel terminale
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Update.JsonPostParam.ProductID">
+            <summary>
+            L'ID del prodotto a cui riferirci per la richiesta di informazioni
+            </summary>
+        </member>
+        <member name="T:cTrader_GURU.Update.JsonUpdateInfo">
+            <summary>
+            Le informazioni restituite dal server in merito al prodotto indicato
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Update.JsonUpdateInfo.ProductID">
+            <summary>
+            L'ID del prodotto a cui riferirci per la richiesta di informazioni
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Update.JsonUpdateInfo.Updated">
+            <summary>
+            La data dell'ultimo aggiornamento
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Update.JsonUpdateInfo.Version">
+            <summary>
+            Ultima versione disponibile
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Update.JsonUpdateInfo.Exp">
+            <summary>
+            In caso di errori viene riempita dalle informazioni di Exception nella fase di elaborazione
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Update.JsonUpdateInfo.Server_Response">
+            <summary>
+            In caso di errori viene riempita con le ultime informazioni ricevute dal server
+            </summary>
+        </member>
+        <member name="T:cTrader_GURU.Update.Check">
+            <summary>
+            Classe con metodi per gestire le richieste di controllo delle versioni dei prodotti
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Update.Check.ProductInformation">
+            <summary>
+            Dopo l'inizializzazione della classe Check viene riempita con le informazioni di aggiornamenti/errori
+            </summary>
+        </member>
+        <member name="M:cTrader_GURU.Update.Check.#ctor(cTrader_GURU.Update.JsonPostParam,System.String)">
+            <summary>
+            Richiesta HTTP --> POST con parametri, ottiene i dati relativi al prodotto e verifica se ci sono aggiornamenti
+            <para>Wiki : https://github.com/cTraderGURU/cTrader-GURU-Utility/wiki/Update.Check() </para>
+            </summary>
+            <returns>
+            Restituisce funzioni e informazioni di aggiornamento
+            </returns>
+            <param name="request_config">Parametri per la richiesta POST</param>
+            <param name="current_endpoint">L'indirizzo della pagina API per la richiesta</param>
+        </member>
+        <member name="M:cTrader_GURU.Update.Check.HaveNewUpdate">
+            <summary>
+            Metodo che ci conferma o meno la presenza di nuovi aggiornamenti
+            <para>Wiki : https://github.com/cTraderGURU/cTrader-GURU-Utility/wiki/Update.Check() </para>
+            </summary>
+            <returns>
+            Restituisce un valore boleano per la presenza di aggiornamenti
+            </returns>
+        </member>
+        <member name="M:cTrader_GURU.Update.Check.HaveError">
+            <summary>
+            Metodo che ci conferma o meno della presenza di errori nella richiesta
+            <para>Wiki : https://github.com/cTraderGURU/cTrader-GURU-Utility/wiki/Update.Check() </para>
+            </summary>
+            <returns>
+            Restituisce un valore boleano per la presenza di errori
+            </returns>
+        </member>
+        <member name="M:cTrader_GURU.Font.FontFamily.GetFontFamily(cTrader_GURU.Font.FontFamilyType)">
+            <summary>
+            Mette a disposizione un font senza alcuna installazione
+            <para>Wiki : https://github.com/cTraderGURU/cTrader-GURU-Utility/wiki/FontFamily.GetFontFamily() </para>
+            </summary>
+            <returns>
+            Restituisce il Font richiesto tra quelli a disposizione in cTrader_GURU.Font.FontFamilyType
+            </returns>
+            <param name="myFFtype">Il tipo di carattere che si vuole utilizzare</param>
+        </member>
+        <member name="T:cTrader_GURU.Properties.Resources">
+            <summary>
+              Classe di risorse fortemente tipizzata per la ricerca di stringhe localizzate e così via.
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Properties.Resources.ResourceManager">
+            <summary>
+              Restituisce l'istanza di ResourceManager nella cache utilizzata da questa classe.
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Properties.Resources.Culture">
+            <summary>
+              Esegue l'override della proprietà CurrentUICulture del thread corrente per tutte le
+              ricerche di risorse eseguite utilizzando questa classe di risorse fortemente tipizzata.
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Properties.Resources.Cabin_Regular">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Byte[].
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Properties.Resources.CenturyGothic">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Byte[].
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Properties.Resources.OpenSans_Bold">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Byte[].
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Properties.Resources.OpenSans_Light">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Byte[].
+            </summary>
+        </member>
+        <member name="P:cTrader_GURU.Properties.Resources.OpenSans_Regular">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Byte[].
+            </summary>
+        </member>
+    </members>
+</doc>
