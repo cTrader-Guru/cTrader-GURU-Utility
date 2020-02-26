@@ -20,7 +20,7 @@ Nel vostro cBot create un riferimento a tale libreria **cTrader-GURU.dll** , poi
 		      
 			    GURU hello = new GURU();  
 			      
-			    Print(hello.ciao());  
+			    Print(hello.Ciao());  
 			      
 			    Print(GURUs.Ciao());  
 		      
